@@ -55,6 +55,27 @@ A comprehensive MERN (MongoDB, Express.js, React, Node.js) Stack Authentication 
    ```
 
 4. Start the frontend:
-```
-npm run client
-```
+   ```
+   npm run client
+   ```
+
+## Project Structure
+
+### Server
+
+- `/server` contains the Express.js server and related backend files.
+- `/server/routes` contains API route definitions for authentication and other functionalities.
+- `/server/controllers` holds controller logic for handling authentication and other business logic.
+- `/server/models` defines MongoDB schemas for user data.
+
+### Client
+
+- `/client` includes the React frontend files and components.
+- `/client/src` contains the main React application along with components and styles.
+- `/client/src/components` holds reusable React components.
+
+## Usage
+
+- Customize the authentication template to suit your specific project requirements.
+- Build additional features on top of the existing structure.
+- Refer to the documentation in each folder for detailed information about the server and client components.

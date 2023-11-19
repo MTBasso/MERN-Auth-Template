@@ -2,19 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 const authRoutes = require("./routes/authRoutes")
 
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: [process.env.FRONTEND_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
 app.use(cookieParser())
 
-mongoose.connect('mongodb://127.0.0.1:27017/authtemplate')
+mongoose.connect(process.env.MONGO_URL + '/authtemplate')
 
 app.use(authRoutes);
 

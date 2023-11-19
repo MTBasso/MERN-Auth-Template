@@ -30,7 +30,7 @@ exports.login = (req, res) => {
         .then(user => {
             bcrypt.compare(password, user.password, (err, response) => {
                 if (!response) res.json("The password is incorrect")
-                const token = jwt.sign({ email: user.email }, "jwt-secret-key", { expiresIn: "30d" });
+                const token = jwt.sign({ email: user.email }, process.env.JWT_SECRETKEY, { expiresIn: "30d" });
                 res.cookie("token", token);
                 res.json('Success')
             })
